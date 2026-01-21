@@ -1,3 +1,19 @@
-img{
-    height:500px;
+#cardGrid img{
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+  padding: 16px;
+}
+
+#cardGrid img:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 15px 5px #2b2002;
 }
