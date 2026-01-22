@@ -15,23 +15,30 @@ async function matchCards(name){
     for(let i = 0; i<card.length; i++){
        const imgElement = document.createElement('a');
        imgElement.classList.add('cardGrid');
-       imgElement.addEventListener('click', () => openModal())
+       imgElement.addEventListener('click', () => openModal(card[i]))
        const img = document.createElement('img');
        img.src = card[i].card_images[0].image_url;
        imgElement.appendChild(img);
        grid.appendChild(imgElement);
     }  }
 
-const close = document.getElementById('close');
 const modal = document.getElementById('my-modal');
 
-function openModal(){
-    modal.showModal();
-}
-
-close.addEventListener('click', () => {
+function openModal(card){
+    modal.innerHTML ='';
+    const name = document.createElement('p');
+    name.textContent = card.name;
+    const close = document.createElement('button');
+    close.textContent = "Return to Hand";
+    close.addEventListener('click', () => {
     modal.close();
 })
+    modal.appendChild(name);
+    modal.appendChild(close);
+     modal.showModal();
+}
+
+
 const form = document.getElementById("cardForm");
 const input = document.getElementById("cardInput");
 
