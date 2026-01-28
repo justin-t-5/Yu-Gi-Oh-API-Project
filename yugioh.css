@@ -17,3 +17,7 @@
   transform: scale(1.05);
   box-shadow: 5px 5px 15px 5px #2b2002;
 }
+
+p {
+  white-space: pre-line;
+}

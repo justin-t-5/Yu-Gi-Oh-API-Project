@@ -28,12 +28,22 @@ function openModal(card){
     modal.innerHTML ='';
     const name = document.createElement('p');
     name.textContent = card.name;
+    const price = document.createElement('p');
+
+    price.textContent = 
+    `1) Card Market Price: ${card.card_prices[0].cardmarket_price}
+    2) TCGPlayer Price: ${card.card_prices[0].tcgplayer_price}
+    3) Ebay Price: ${card.card_prices[0].ebay_price}
+    4) Amazon Price: ${card.card_prices[0].amazon_price}
+    5) Cool Stuff Inc. Price: ${card.card_prices[0].coolstuffinc_price}`;
+
     const close = document.createElement('button');
     close.textContent = "Return to Hand";
     close.addEventListener('click', () => {
     modal.close();
-})
+    })
     modal.appendChild(name);
+    modal.appendChild(price);
     modal.appendChild(close);
      modal.showModal();
 }
